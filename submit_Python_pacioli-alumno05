@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#SBATCH -p hpc-bio-pacioli
+#SBATCH --chdir=/home/alumno05/lab-python
+#SBATCH -J advanced
+#SBATCH --cpus-per-task=1
+#SBATCH --mail-type=NONE    #END/START/NONE
+#SBATCH --mail-user=MAIL@um.es
+
+module load anaconda/2023.03
+time ipython reduc-operation-alumno05.ipynb 10000000
+time ipython reduc-operation-alumno05.ipynb 100000000
+module unload anaconda/2023.03
